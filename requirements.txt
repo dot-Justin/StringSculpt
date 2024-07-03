@@ -1,0 +1,4 @@
+pyautogui
+requests
+pyperclip
+system_hotkey
