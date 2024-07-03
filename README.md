@@ -34,11 +34,20 @@ git clone https://dot-justin/stringsculpt
 cd StringSculpt
 pip install -r requirements.txt
 ```
-And now StringSculpt is installed and ready to go! To run the application, run:
+Now, you need to add your api key in the *.env*. I have provided a `.env.example`, so you can edit it and remove the .example file extension, so you're only left with `.env`. This is where the program will pull your api key from, and you need to edit this before you can use the program.
+
+Contents of .env:
+```
+API_KEY=GROQ_API_KEY_HERE
+BASE_URL=https://api.groq.com/openai/v1/chat/completions
+```
+
+Once that's finished, StringSculpt is installed and ready to go! To run the application, run:
 
 `python main.py`
 
 You won't see anything happen, so go select some text and commit the shortcut `Ctrl + Shift + F` to memory :)
+
 *Please note that if you keep holding down the Shift/Control keys while the program starts, it will be unable to capture your selected text. I'm working on a solution to this, but for now, just let the keys go quickly after pressing F.*
 
 </br>
@@ -47,5 +56,3 @@ You won't see anything happen, so go select some text and commit the shortcut `C
 
 - Hotkey: The default hotkey is `Ctrl + Shift + F`. You can change this by modifying the `hk.register` call in the script.
 - LLM Temperature: Adjust the creativity of the AI by changing the LLM_TEMPERATURE variable on line `17` of `main.py`.
-
-## 
