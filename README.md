@@ -25,7 +25,7 @@ You can find demos on StringSculpt's project page!
 # How it works:
 1. When the keyboard shortcut `Ctrl + Shift + F` is recognized, it calls our CustomTkinter UI.
    - If there is text selected, it enters "sculpt mode", where it will edit your selected text
-   - if there is *no* text selected, it enters "generative mode", where it generates any text you want based on the prompt.
+   - If there is *no* text selected, it enters "generative mode", where it generates any text you want based on the prompt.
 2. Once the text to be edited (if any), as well as the user prompt get sent to an LLM api. I personally recommend [groq](https://console.groq.com), as it's super fast, and free.
 3. Your old text is replaced by your sculpted text!
 
@@ -79,7 +79,7 @@ For example, if you wanted a summary of the selected text, you could just input 
 ### Editing:
 | **Quick Action** | **Description** |
 | --- | --- |
-| `fix` | Proofreads, fixes grammar and spelling, and rewrites selected text, keeping language the same |
+| `fix` | Proofreads and fixes grammar and spelling, keeping language the same |
 | `rewrite` | Rewrites your text in a similar style as your own writing, or, if specified, someone else's writing |
 | `replace` / `remove` | Searches and replaces or removes text in selected text |
 | `finish` / `complete` | Finishes selected sentence or paragraph
