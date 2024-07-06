@@ -3,18 +3,26 @@
 </p>
 
 <p align="center">
+  
+</p>
+
+<p align="center">
     <i>StringSculpt is a minimalistic Windows application that allows you to quickly format and replace selected text, or generate new text using a simple keyboard shortcut.</i>
 </p>
 
 
 </br>
 
-## Demo:
-<img src="assets/demo1.gif" alt="StringSculpt Demo 1" width="400"/>
+## Demos:
+
+You can find demos on StringSculpt's project page!
+
+**https://dotjust.in/projects/stringsculpt**
+
 
 </br>
 
-## How it works:
+# How it works:
 1. When the keyboard shortcut `Ctrl + Shift + F` is recognized, it calls our CustomTkinter UI.
    - If there is text selected, it enters "sculpt mode", where it will edit your selected text
    - if there is *no* text selected, it enters "generative mode", where it generates any text you want based on the prompt.
@@ -23,14 +31,14 @@
 
 </br>
 
-## Quick start guide:
+# Quick start guide:
 
 Make sure [python](https://python.org/downloads) and [git](https://git-scm.org/downloads) are installed. 
 
 Navigate to the directory you want to install StringScript, and run:
 
 ```
-git clone https://dot-justin/stringsculpt
+git clone https://github.com/dot-justin/stringsculpt
 cd StringSculpt
 pip install -r requirements.txt
 ```
@@ -48,11 +56,45 @@ Once that's finished, StringSculpt is installed and ready to go! To run the appl
 
 You won't see anything happen, so go select some text and commit the shortcut `Ctrl + Shift + F` to memory :)
 
-*Please note that if you keep holding down the Shift/Control keys while the program starts, it will be unable to capture your selected text. I'm working on a solution to this, but for now, just let the keys go quickly after pressing F.*
+</br>
+
+
+## Current Bugs:
+These are all of the bugs I'm aware of. If you stumble across another one, I would be very greatful if you could open an issue! I am currently working on fixes for all of these, so keep an eye on the commit history.
+
+- When rapid-fire selecting and formatting, some may get missed, causing the LLM to respond similar to this: `Nothing to fix here!`
+   - When this happens, unfortunately you need to select your text and reprompt.
+- When doing the shortcut to active StringSculpt, if you don't let go of all of the keys in time, it won't be able to capture your selected text, and as a result, fail to format it.
+- Sometimes when asking it to summarize or fix, etc. it will give a preamble like `Here is the summarized/fixed text`. This is a prompting issue, and I'm playing with the prompt as well as the temperature to minimize this.
 
 </br>
 
-## Customization:
+# Quick Actions
+
+### What are Quick Actions?
+Quick actions are a quick and easy way to get StringSculpt to do specific things to your text.
+
+For example, if you wanted a summary of the selected text, you could just input `summarize` and it will do so. You can also combine Quick Actions, for example: `remove exclamation points and rewrite as shakespeare`
+
+### Editing:
+| **Quick Action** | **Description** |
+| --- | --- |
+| `fix` | Proofreads, fixes grammar and spelling, and rewrites selected text, keeping language the same |
+| `rewrite` | Rewrites your text in a similar style as your own writing, or, if specified, someone else's writing |
+| `replace` / `remove` | Searches and replaces or removes text in selected text |
+| `finish` / `complete` | Finishes selected sentence or paragraph
+
+### Summarization:
+| **Quick Action** | **Description** |
+| --- | --- |
+| `summarize` | Gives an overarching summary of selected text |
+| `action items` | Finds action items and outputs in bullet point format |
+| `key points` | Finds key points and lists them |
+| `notes` | Makes notes on the selected text |
+
+</br>
+
+# Customization:
 
 - Hotkey: The default hotkey is `Ctrl + Shift + F`. You can change this by modifying the `hk.register` call in the script.
-- LLM Temperature: Adjust the creativity of the AI by changing the LLM_TEMPERATURE variable on line `17` of `main.py`.
+- LLM Temperature: Adjust the creativity of the AI by changing the LLM_TEMPERATURE variable on line `18` of `main.py`.
